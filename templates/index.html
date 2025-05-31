@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Performance Analysis</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #c89ff4, #91b6f7);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #000000;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin: 0;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px 40px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+        font-weight: normal;
+        color: #000000;
+      }
+
+      .btn {
+        margin-top: 40px;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        color: white;
+        background-color: #5e35b1;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 10px rgba(94, 53, 177, 0.4);
+      }
+      .btn:hover {
+        background-color: #7e57c2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Student Performance Analysis</h1>
+    <h2>Where you can explore and predict student exam scores</h2>
+
+    <a href="{{ url_for('predict_datapoint') }}" class="btn"
+      >Go to Prediction Form</a
+    >
+  </body>
+</html>
