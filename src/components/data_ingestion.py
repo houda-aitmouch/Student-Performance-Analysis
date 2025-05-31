@@ -6,6 +6,8 @@ from dataclasses import dataclass
 
 from src.exception import CustomException
 from src.logger import logging
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
 
 # Configuration class to store file paths
 @dataclass
@@ -52,8 +54,7 @@ class DataIngestion:
         
 if __name__ == "__main__":
     ingestion = DataIngestion()
-    train_path, test_path, raw_path = ingestion.initiate_data_ingestion()
-    print("✔️ Data ingestion completed successfully.")
-    print(f"Train set path: {train_path}")
-    print(f"Test set path : {test_path}")
-    print(f"Raw data path : {raw_path}")
+    train_data, test_data, _ = ingestion.initiate_data_ingestion()
+    
+    data_transformation = DataTransformation()
+    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data, test_data)
